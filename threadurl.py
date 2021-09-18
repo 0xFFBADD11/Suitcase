@@ -50,20 +50,20 @@ data = {
     'name': 'Bozo',   
 }
 
-def thread_request()
+def thread_request():
     while True:
         response = requests.post(url, json=data, headers=header).text
         print(response)
        
 threads = []
 
-for i in range(MAX_THREADS)
+for i in range(MAX_THREADS):
     thread = threading.Thread(target=thread_request)
     thread.daemon = True
     threads.append(thread)
 
-for i in range(MAX_THREADS)
+for i in range(MAX_THREADS):
     threads[i].start()
 
-for i in range(MAX_THREADS)
+for i in range(MAX_THREADS):
     threads[i].join()
